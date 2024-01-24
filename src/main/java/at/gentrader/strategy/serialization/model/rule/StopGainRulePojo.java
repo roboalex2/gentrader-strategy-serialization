@@ -24,7 +24,7 @@ public class StopGainRulePojo extends RulePojo implements AdjustableRule {
 
     @Override
     public Rule toTa4jRule(BarSeries series) {
-        Rule result = new StopGainRule((ClosePriceIndicator) indicator, values.get(0));
+        Rule result = new StopGainRule((ClosePriceIndicator) indicator.toTa4jIndicator(series), values.get(0));
         return super.linkLogicRules(result, series);
     }
 
