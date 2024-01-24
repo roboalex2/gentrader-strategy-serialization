@@ -6,9 +6,9 @@ import java.time.Duration;
 import java.time.OffsetDateTime;
 
 @Data
+@ToString
 @Builder(toBuilder = true)
 @AllArgsConstructor
-@ToString
 @NoArgsConstructor
 public class Candlestick {
 

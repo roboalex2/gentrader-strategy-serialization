@@ -1,9 +1,6 @@
 package at.gentrader.strategy.serialization.model.indicator;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.ToString;
+import lombok.*;
 import org.ta4j.core.BarSeries;
 import org.ta4j.core.Indicator;
 import org.ta4j.core.indicators.helpers.ClosePriceIndicator;
@@ -16,6 +13,7 @@ import java.util.List;
 @Builder(toBuilder = true)
 @AllArgsConstructor
 @ToString
+@NoArgsConstructor
 public class ClosePriceIndicatorPojo implements IndicatorPojo, Serializable {
 
     @Override

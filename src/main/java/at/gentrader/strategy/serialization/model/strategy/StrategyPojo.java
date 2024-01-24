@@ -2,10 +2,7 @@ package at.gentrader.strategy.serialization.model.strategy;
 
 import at.gentrader.strategy.serialization.model.config.TradeModes;
 import at.gentrader.strategy.serialization.model.rule.RulePojo;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.ToString;
+import lombok.*;
 
 import java.io.Serializable;
 import java.util.UUID;
@@ -13,6 +10,7 @@ import java.util.UUID;
 @Data
 @Builder(toBuilder = true)
 @AllArgsConstructor
+@NoArgsConstructor
 @ToString
 public class StrategyPojo implements Serializable {
     private long baseId;

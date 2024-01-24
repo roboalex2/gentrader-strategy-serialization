@@ -12,6 +12,7 @@ import java.util.List;
 @Data
 @Builder(toBuilder = true)
 @AllArgsConstructor
+@NoArgsConstructor
 @ToString
 public class OverIndicatorRulePojo extends RulePojo {
 
