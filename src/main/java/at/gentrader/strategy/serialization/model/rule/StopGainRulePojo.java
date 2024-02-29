@@ -29,8 +29,8 @@ public class StopGainRulePojo extends RulePojo implements AdjustableRule {
     }
 
     @Override
-    List<IndicatorPojo> getIndicators() {
-        return List.of(indicator);
+    List<IndicatorPojo> getFlattenedIndicators() {
+        return indicator.getFlattenedIndicatorList();
     }
 
     @Override

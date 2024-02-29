@@ -64,7 +64,7 @@ public abstract class RulePojo implements Serializable {
 
     @JsonIgnore
     public List<IndicatorPojo> getFlattenedIndicatorList() {
-        List<IndicatorPojo> indicators = new ArrayList<>(getIndicators());
+        List<IndicatorPojo> indicators = new ArrayList<>(getFlattenedIndicators());
         for (LogicLinkPojo link : logicLinks) {
             indicators.addAll(link.getRule().getFlattenedIndicatorList());
         }
@@ -72,7 +72,7 @@ public abstract class RulePojo implements Serializable {
     }
 
     @JsonIgnore
-    abstract List<IndicatorPojo> getIndicators();
+    abstract List<IndicatorPojo> getFlattenedIndicators();
 
     @JsonIgnore
     public List<RulePojo> getFlattenedRuleList() {

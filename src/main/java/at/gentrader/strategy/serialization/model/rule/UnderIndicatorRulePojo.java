@@ -6,7 +6,10 @@ import org.ta4j.core.BarSeries;
 import org.ta4j.core.Rule;
 import org.ta4j.core.rules.UnderIndicatorRule;
 
+import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -25,7 +28,9 @@ public class UnderIndicatorRulePojo extends RulePojo {
     }
 
     @Override
-    List<IndicatorPojo> getIndicators() {
-        return List.of(indicator, threshold);
+    List<IndicatorPojo> getFlattenedIndicators() {
+        return Stream.of(indicator.getFlattenedIndicatorList(), threshold.getFlattenedIndicatorList())
+                .flatMap(Collection::stream)
+                .collect(Collectors.toList());
     }
 }
